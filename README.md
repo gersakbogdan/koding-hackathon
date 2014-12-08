@@ -35,7 +35,7 @@ Text is different based on your selected language:
 
 Camera:
 ![ParlezVous](/screenshots/local-camera.png "Local camera")
-![ParlezVous](/screenshots/local-remote.png "Remote camera")
+![ParlezVous](/screenshots/remote-camera.png "Remote camera")
 
 ## APIs used
 
