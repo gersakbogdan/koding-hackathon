@@ -1,4 +1,4 @@
-# Koding Global Virtual Hackathon's Project
+# Koding Global Virtual Hackathon Project
 
 Parlez vous @koding #hackathon?!
 
@@ -33,10 +33,12 @@ Text is different based on your selected language:
 ![ParlezVous](/screenshots/english.png "English screen")
 ![ParlezVous](/screenshots/romana.png "Romanian screen")
 
-Camera
+Camera:
 ![ParlezVous](/screenshots/local-camera.png "Local camera")
 ![ParlezVous](/screenshots/local-remote.png "Remote camera")
 
 ## APIs used
 
-Provide a list of APIs you used in this project.
+Of course, nothing can be done without the aid of some great tools:
+
+PubNub, Web Speech API, Google Translate, Mean.io
