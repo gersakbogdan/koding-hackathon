@@ -43,7 +43,7 @@ angular.module('mean.dashboard').factory('MPN', ['$rootScope',
   	}
 
 	function connect() {
-		console.log('PUBNUB connect!');
+		//console.log('PUBNUB connect!');
 
 		mpn.here_now({
 			channel: channel,
@@ -56,7 +56,7 @@ angular.module('mean.dashboard').factory('MPN', ['$rootScope',
   	};
 
   	function presence(details) {
-  		console.log('PUBNUB presence details: ', details);
+  		//console.log('PUBNUB presence details: ', details);
 
   		var uuid = 'uuid' in details && ('' + details.uuid).toLowerCase();
 
@@ -112,8 +112,10 @@ angular.module('mean.dashboard').factory('MPN', ['$rootScope',
 
 		function success(user) {
 			users[uuid] = user;
-			delete users[uuid].status;
-			console.log('new users state: ', users[uuid]);
+			if (users[uuid] && users[uuid].status) {
+				delete users[uuid].status;
+			}
+			//console.log('new users state: ', users[uuid]);
 			mpn.db.set(channel + '-users', JSON.stringify(users));
 			cb(user);
 		}
@@ -122,7 +124,7 @@ angular.module('mean.dashboard').factory('MPN', ['$rootScope',
 			channel: channel,
 			uuid: uuid,
 			callback: function (state) {
-				console.log('user state: ', state);
+				//console.log('user state: ', state);
 				if (state) {
 					success(state.user);
 				}

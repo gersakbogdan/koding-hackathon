@@ -14,7 +14,7 @@ angular.module('mean.dashboard').factory('Speech', ['$rootScope',
 	if ('speechSynthesis' in window) {
 	 console.log('Synthesis support. Make your web apps talk!');
 	} else {
-		console.log('Synthesis not supported.');
+	 console.log('Synthesis not supported.');
 	}
 
 	if ('SpeechRecognition' in window) {
@@ -61,7 +61,7 @@ angular.module('mean.dashboard').factory('Speech', ['$rootScope',
 
 	function stop() {
 		if (listening() && recognizer) {
-			console.log('recognizer manual stopped!');
+			//console.log('recognizer manual stopped!');
 			recognizer.stop();
 		}
 	};
@@ -130,13 +130,13 @@ angular.module('mean.dashboard').factory('Speech', ['$rootScope',
 	
 	function onstart() {
 		listening(true);
-		console.log('on start event', arguments);
+		//console.log('on start event', arguments);
 		justSpoke = false;
 	};
 
 	function onend() {
 		listening(false);
-		console.log('on end event', arguments);
+		//console.log('on end event', arguments);
 		justSpoke = false;
 
 		if (lastError && !notAllowed && recognizer) {
@@ -145,7 +145,7 @@ angular.module('mean.dashboard').factory('Speech', ['$rootScope',
 	};
 
 	function onerror(response) {
-		console.log('Speach recognizer error: ', response, arguments);
+		//console.log('Speach recognizer error: ', response, arguments);
 
 		listening(false);
 		lastError = response.error;

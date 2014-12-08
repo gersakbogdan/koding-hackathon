@@ -93,7 +93,7 @@ angular.module('mean.dashboard').controller('DashboardController', ['$scope', '$
 
   	$scope.$watch('language', function (newL, oldL) {
   		if (newL && oldL && newL !== oldL) {
-  			console.log('change language to: ', newL);
+  			//console.log('change language to: ', newL);
   			Speech.setLang(newL);
   		}
   	});

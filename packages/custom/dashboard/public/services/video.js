@@ -18,20 +18,20 @@ angular.module('mean.dashboard').factory('Video', ['$rootScope', '$timeout',
   		mwrtc.receive(receive);
 
       mwrtc.connect(function () {
-        console.log('phone connect');
+        //console.log('phone connect');
       });
       mwrtc.disconnect(function () {
-        console.log('phone disconnect');
+        //console.log('phone disconnect');
         isReady(false);
       });
       mwrtc.reconnect(function () {
-        console.log('phone reconnect');
+        //console.log('phone reconnect');
       });
 
   	}
 
   	function ready() {
-      console.log('phone ready');
+      //console.log('phone ready');
       isReady(true);
 
   		$('#local-video').append(mwrtc.video);
