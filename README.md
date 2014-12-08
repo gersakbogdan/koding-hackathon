@@ -7,13 +7,21 @@ Parlez vous @koding #hackathon?!
 [![Koding Hackathon](/images/badge.png?raw=true "Koding Hackathon")](https://koding.com/Hackathon)
 
 Ahmed: Merhaba! Benim adım Ahmed ve gazete duyurusu ile bağlantılı olarak arayacak.
+
 Agata:  Извини, не разумем шта говорил.
+
 Intan: Halo, di sini hidup keluarga Smith?
+
 Helen: Hello! Please speak English. I do not understand anything.
+
 Adam: Ola! Eu son Adam. Vostede me mandou unha mensaxe onte á noite.
+
 Maria: Non capisco tutto quello che dici. Non parlo la sua lingua.
+
 Jose:¿Quién está ahí? ¿Es una broma? No entiendo.
+
 Wang XiuYing: 已經接受工程系.
+
 
 Language boundaries? NO PROBLEM!
 
@@ -33,12 +41,17 @@ Text is different based on your selected language:
 ![ParlezVous](/screenshots/english.png "English screen")
 ![ParlezVous](/screenshots/romana.png "Romanian screen")
 
-Camera:
+Local camera:
 ![ParlezVous](/screenshots/local-camera.png "Local camera")
+
+Remote video call:
 ![ParlezVous](/screenshots/remote-camera.png "Remote camera")
 
 ## APIs used
 
 Of course, nothing can be done without the aid of some great tools:
 
-PubNub, Web Speech API, Google Translate, Mean.io
+**PubNub, Web Speech API, Google Translate, Mean.io**
+
+## Notes
+Because this APP is based on Web Speech API works justs on CHROME Browser.
