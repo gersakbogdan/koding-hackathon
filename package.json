@@ -2,7 +2,7 @@
   "name": "mean",
   "description": "Parlez Vous?",
   "version": "0.4.1",
-  "private": false,
+  "private": true,
   "author": "Linnovate <mean@linnovate.net>",
   "contributors": "https://github.com/linnovate/mean/graphs/contributors",
   "mean": "0.4.1",
