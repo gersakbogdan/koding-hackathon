@@ -1,0 +1,53 @@
+html {
+    height: 100%;
+}
+
+html, body {
+	overflow: hidden !important;
+}
+
+body.dashboard {
+    /*background: url('/dashboard/assets/img/st3.jpg');*/
+    background: url('/theme/assets/img/bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+	height: 100%;
+	position: relative;
+}
+
+.navbar-inverse {
+	background-color: transparent !important;
+}
+
+#people.panel-body {
+	height: 300px;
+	overflow: auto;
+}
+#chat.panel-body {
+	height: 450px;
+	overflow-y: scroll;
+}
+
+#local-video-container {
+	width: 100%;
+	background-color: black;
+}
+
+#local-video {
+	width: 240px;
+	margin: 0 auto;
+	height: 180px;
+	background-color: black;
+}
+
+#remote-video-container {
+	position:relative;
+	width: 100%;
+}
+
+#remote-video {
+	position: absolute;
+	width: 100%;
+	background-color: black;
+}

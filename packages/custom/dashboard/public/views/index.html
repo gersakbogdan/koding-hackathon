@@ -1,0 +1,103 @@
+<div class="" data-ng-controller="DashboardController">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Online
+      </div>
+      <div class="panel-body" id="people">
+        <ul class="media-list">
+          <li class="media" ng-repeat="user in users">
+            <div class="media-body">
+              <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object img-circle" style="max-height:30px;" ng-src="{{user.picture || 'https://gravatar.com/avatar/cb3b7962776609813018b0204c7908b1?s=60&d=retro'}}">
+                </a>
+                <div class="media-body">
+                  <div ng-show="user._id !== global.user._id && user.status === 'Online'" style="float: right;">
+                    <button ng-show="!activeSessions[user._id]" class="btn btn-default" ng-click="videoCall(user._id)">Video call</button>
+                    <button ng-show="activeSessions[user._id]" class="btn btn-danger" ng-click="hangupCall(user._id)">Hang up</button>
+                  </div>
+                  <h5>{{user.name || 'Anonymous'}}</h5>  
+                  <small class="text-muted">{{user.status || 'Offline'}}</small>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        Camera
+      </div>
+      <div id="local-video-container" class="panel-body" style="width: 100%;">
+        <div id="local-video"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">Messages</div>
+      <div id="remote-video-container">
+          <ul id="remote-video"></ul>
+      </div>
+      <div class="panel-body" id="chat">
+        <ul class="media-list">
+          <li class="media" ng-repeat="message in gMessages">
+            <div class="media-body">
+              <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object img-circle" style="max-height: 35px;" ng-src="{{users[message.uuid].picture || 'https://gravatar.com/avatar/cb3b7962776609813018b0204c7908b1?s=60&d=retro'}}">
+                </a>
+                <div class="media-body">
+                  {{message.body}}
+                  <br />
+                  <small class="text-muted">{{users[message.uuid].name}} | {{message.time | date: 'short'}}</small>
+                  <hr />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="panel-footer">
+        <div class="input-group">
+          Talking in:
+          <select ng-model="language" class="selectpicker">
+            <option value="de-DE">Deutsch</option>
+            <option value="en-US">English - United States</option>
+            <option value="en-GB">English - United Kingdom</option>
+            <option value="es-ES">Español</option>
+            <option value="fr-FR">Français</option>
+            <option value="it-IT">Italiano</option>
+            <option value="hu-HU">Magyar</option>
+            <option value="nl-NL">Nederlands</option>
+            <option value="pl-PL">Polski</option>
+            <option value="pt-PT">Português</option>
+            <option value="ro-RO">Română</option>
+            <option value="tr-TR">Türkçe</option>
+            <option value="ja-JP">日本語</option>
+          </select>
+          <span class="input-group-btn">
+            <button id="gtalk" class="btn btn-default"><i class="icon-large icon-microphone"></i></button>
+            <button id="gspeaker" class="btn btn-default"><i class="icon-large icon-headphones"></i></button>
+            <button id="gvideo" class="btn btn-default"><i class="icon-large icon-camera"></i></button>
+          </span>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="input-group">
+          <input id="globalmessage" ng-model="gmsg" class="form-control" placeholder="Send message" type="text">
+          <span class="input-group-btn">
+            <button id="globalsend" class="btn btn-info" type="button">SEND</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
